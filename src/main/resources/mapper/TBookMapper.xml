@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jimmy.eshop.mapper.TBookMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.restful.demo.entity.TBook">
+        <id column="book_id" property="bookId" />
+        <result column="book_name" property="bookName" />
+        <result column="book_price" property="bookPrice" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        book_id, book_name, book_price
+    </sql>
+
+</mapper>
