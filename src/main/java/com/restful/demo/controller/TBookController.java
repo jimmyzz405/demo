@@ -21,6 +21,7 @@ import org.springframework.stereotype.Controller;
  * @since 2020-07-06
  */
 @RestController
+@RequestMapping("/api/v1")
 public class TBookController {
 
     @Autowired
@@ -28,13 +29,13 @@ public class TBookController {
     @Autowired
     private TBookServiceImpl bookService;
 
-    @RequestMapping("/getBook/{bookId}")
+    @RequestMapping(value = "/books/{bookId}",method = RequestMethod.GET)
     public Object getBook(@PathVariable Integer bookId){
         TBook book = bookMapper.selectById(bookId);
         return book;
     }
 
-    @RequestMapping(value = "/delBook/{bookId}",method = RequestMethod.DELETE)
+    @RequestMapping(value = "/books/{bookId}",method = RequestMethod.DELETE)
     public Object delBook(@PathVariable Integer bookId){
 
        return bookMapper.deleteById(bookId);
@@ -42,12 +43,12 @@ public class TBookController {
 
 //    @RequestMapping("/editBook/")
 
-    @RequestMapping(value = "/addBook",method = RequestMethod.POST)
+    @RequestMapping(value = "/books",method = RequestMethod.PUT)
     public Object addBook( TBook book){
         return bookMapper.insert(book);
     }
 
-    @RequestMapping(value = "/editBook",method = RequestMethod.POST)
+    @RequestMapping(value = "/books",method = RequestMethod.POST)
     public Object editBook(TBook book){
         return bookMapper.updateById(book);
     }
