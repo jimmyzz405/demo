@@ -13,10 +13,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MyGenerator {
-//
-//    @Test
-//    public void codeGenerator() {
-//        // 代码生成器
+
+    @Test
+    public void codeGenerator() {
+        // 代码生成器
 //        AutoGenerator mpg = new AutoGenerator();
 //
 //        // 全局配置
@@ -75,5 +75,5 @@ public class MyGenerator {
 //        mpg.setStrategy(strategy);
 //        mpg.setTemplateEngine(new FreemarkerTemplateEngine());
 //        mpg.execute();
-//    }
+    }
 }
